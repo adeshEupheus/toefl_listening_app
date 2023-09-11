@@ -10,10 +10,6 @@ import Swal from "sweetalert2";
 const Home = () => {
   const [disable, setdisable] = useState(false);
 
-  // useEffect(() => {
-  //   checkExpiry();
-  // }, [ExpiryDate]);
-
   useEffect(() => {
     fetch();
   }, []);
@@ -21,7 +17,7 @@ const Home = () => {
 
   const handlePractice = () => {
     // navigate("/junior_playlist");
-    navigate("/get_test/Practice");
+    navigate("/get_test/practice");
   };
 
   const fetch = async () => {
@@ -64,6 +60,9 @@ const Home = () => {
     <>
       <div className=" w-full">
         <Navbar status={"home"} />
+        <p className="text-3xl text-blue-400 italic ml-[5vw] mt-4">
+          Listening Comprehension
+        </p>
         <div className="flex flex-col sm:flex-row gap-[3rem] justify-center mt-[15vh]">
           <div
             className={`flex justify-center items-center rounded-md mx-[4.5rem] sm:mx-0 !w-[50%] !h-[200px] sm:!w-[30%] sm:!h-[300px] border-2 border-black  text-3xl font-bold shadow-md shadow-black bg-gradient-to-b from-sky-400 to-sky-200 ${

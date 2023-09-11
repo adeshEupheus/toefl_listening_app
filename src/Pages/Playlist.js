@@ -121,6 +121,12 @@ const Playlist = ({ value }) => {
     });
     dispatch(setAudioList(audioList));
     console.log("AUDIOLIST", audioList);
+
+    audioList = audioList
+      .slice()
+      .sort(
+        (a, b) => Number(a.Title.split(" ")[1]) - Number(b.Title.split(" ")[1])
+      );
     setSongsList(audioList);
   };
   return (

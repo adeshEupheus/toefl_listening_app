@@ -53,6 +53,9 @@ const Category = () => {
     <>
       <div className=" w-full">
         <Navbar status={"home"} />
+        <p className="text-3xl text-blue-400 italic ml-[5vw] mt-4">
+          Listening Comprehension
+        </p>
         <div className="flex flex-col sm:flex-row gap-[3rem] justify-center mt-[15vh]">
           {data.map((item) => (
             <div
@@ -60,8 +63,7 @@ const Category = () => {
               // onClick={handleJunior}
               onClick={() => handlePlaylist(item.id)}
             >
-              {/* <img src={junior} alt="junior" /> */}
-              {item.Title}
+              <p className="w-fit">{item.Title}</p>
             </div>
           ))}
         </div>

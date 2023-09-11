@@ -22,6 +22,7 @@ export default function Dropdown({
       console.log(value, type);
       handleOrderProcessingForm(value, type);
     }
+
     if (type === "select_city") {
       console.log(value, type);
       handleOrderProcessingForm(value, type);
@@ -35,7 +36,6 @@ export default function Dropdown({
       handleOrderProcessingForm(value, type);
     }
     if (type === "select_grade") {
-      console.log(value, type);
       handleOrderProcessingForm(value, type);
     }
     if (type === "select_gradeCategory") {
@@ -57,6 +57,9 @@ export default function Dropdown({
       switch (Name) {
         case "select_state":
           return option.state;
+          break;
+        case "select_grade":
+          return option.grade.toString();
           break;
         case "select_city":
           return option.city;
@@ -104,7 +107,7 @@ export default function Dropdown({
           <TextField
             {...params}
             variant="outlined"
-            sx={{ width: width }}
+            sx={{ width: "10rem" }}
             size="small"
             // size={id === "time" ? "small" : "medium"}
             error={error}

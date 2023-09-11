@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Button } from "@mui/material";
-
-import { useDispatch } from "react-redux";
-
-import { useSelector } from "react-redux";
-import { Form, useNavigate } from "react-router-dom";
-// import Loader from "../component/Loader/Loader";
+import React, { useState } from "react";
 import Cover from "../Components/assest/Login.png";
 import eupheus from "../Components/assest/eupheus.png";
-// import Swal from "sweetalert2";
 import Tabs from "../Components/Material/Tabs";
 
 const Login = () => {
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   return (
     <div className="flex justify-between h-screen">

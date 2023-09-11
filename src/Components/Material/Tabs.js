@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
-import Playlist from "../../Pages/Playlist";
 import LoginPage from "../../Pages/Login";
 import Register from "../../Pages/Register";
 
@@ -9,14 +8,20 @@ function classNames(...classes) {
 }
 
 export default function Tabs() {
+  const [index, setIndex] = useState(0);
+
   let [categories] = useState({
-    Login: <LoginPage />,
+    Login: <LoginPage setIndex={setIndex} />,
     Register: <Register />,
   });
-
   return (
     <div className="w-[70%] sm:w-full max-w-md px-2 py-4 sm:px-0 mx-4 sm:mx-0">
-      <Tab.Group>
+      <Tab.Group
+        onChange={(e) => {
+          setIndex(e);
+        }}
+        selectedIndex={index}
+      >
         <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1 ml-7 sm:ml-0">
           {Object.keys(categories).map((category) => (
             <Tab
