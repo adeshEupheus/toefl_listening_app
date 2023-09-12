@@ -46,7 +46,7 @@ const Playlist = ({ value }) => {
 
   const sendAudio = (id) => {
     const i = songList.find((song) => song.id === id);
-    console.log(i);
+    // console.log(i);
 
     dispatch(audioActions(i));
     // dispatch(audioActions(songList));
@@ -77,7 +77,7 @@ const Playlist = ({ value }) => {
     setShowsidebar(status);
   };
   const ply_value = useSelector((state) => state.icns.ply);
-  console.log("PLY_VALUE", ply_value);
+  // console.log("PLY_VALUE", ply_value);
 
   const [ply_state, set_ply_state] = useState(null);
 
@@ -97,7 +97,7 @@ const Playlist = ({ value }) => {
         Authorization: "Bearer " + Cookies.get("token"),
       },
     }).catch((err) => {
-      console.log(err.response.status);
+      // console.log(err.response.status);
       if (err.response.status === 401) {
         Swal.fire({
           text: "Session Expired",
@@ -106,12 +106,11 @@ const Playlist = ({ value }) => {
         navigate("/");
       }
     });
-    console.log("RES", res.data.message);
+    // console.log("RES", res.data.message);
     let audioList = [];
 
     res.data.message.map((item, index) => {
       audioList.push({
-        id: index + 1,
         Title: item.Title,
         Url: item.Url,
         TestId: item.TestId,
@@ -119,14 +118,18 @@ const Playlist = ({ value }) => {
         updatedAt: item.updatedAt,
       });
     });
-    dispatch(setAudioList(audioList));
-    console.log("AUDIOLIST", audioList);
 
     audioList = audioList
       .slice()
       .sort(
         (a, b) => Number(a.Title.split(" ")[1]) - Number(b.Title.split(" ")[1])
       );
+    audioList.map((item, index) => {
+      item.id = index + 1;
+    });
+    // console.log(audioList);
+    dispatch(setAudioList(audioList));
+
     setSongsList(audioList);
   };
   return (
