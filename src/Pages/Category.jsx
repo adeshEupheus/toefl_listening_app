@@ -56,14 +56,14 @@ const Category = () => {
         <p className="text-3xl text-blue-400 italic ml-[5vw] mt-4">
           Listening Comprehension
         </p>
-        <div className="flex flex-col sm:flex-row gap-[3rem] justify-center mt-[15vh]">
+        <div className="flex flex-col sm:flex-row gap-[3rem] justify-center  mt-[15vh]">
           {data.map((item) => (
             <div
-              className="flex justify-center items-center rounded-md  mx-[4.5rem] sm:mx-0 !w-[50%] !h-[200px] sm:!w-[30%]  sm:!h-[300px] border-2 border-black cursor-pointer text-3xl font-bold shadow-md shadow-black bg-gradient-to-b from-sky-400 to-sky-200"
+              className="flex justify-center items-center text-center rounded-md  mx-[4.5rem] sm:mx-0 !w-[50%] !h-[200px] sm:!w-[30%]  sm:!h-[300px] border-2 border-black cursor-pointer text-xl sm:text-3xl font-bold shadow-md shadow-black bg-gradient-to-b from-sky-400 to-sky-200"
               // onClick={handleJunior}
               onClick={() => handlePlaylist(item.id)}
             >
-              <p className="w-fit">{item.Title}</p>
+              <p className="w-fit ">{item.Title}</p>
             </div>
           ))}
         </div>
