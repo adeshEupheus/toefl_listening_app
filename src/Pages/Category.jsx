@@ -1,19 +1,19 @@
 import React from "react";
 import Navbar from "../Components/Material/Navbar";
-import junior from "../Components/assest/junior_logo.jpg";
 import senior from "../Components/assest/senior-logo.png";
-import primary from "../Components/assest/primary-logo.png";
 import { useNavigate, useParams } from "react-router-dom";
 import localinstance from "../localinstance";
 import { useLayoutEffect } from "react";
 import Cookies from "js-cookie";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import Junior from "../Components/assest/toefl_junior.png";
+import Primary from "../Components/assest/toefl_primary.png";
 
 const Category = () => {
   const [data, setData] = useState([]);
   const { category } = useParams();
-  console.log(category);
+  const [junior, setJunior] = useState(false);
 
   useLayoutEffect(() => {
     TestByCategory();
@@ -47,16 +47,25 @@ const Category = () => {
       }
     });
     setData(res.data.message);
-    console.log(res.data.message[0].Title);
+    if (res.data.message[0].Title.includes("Step 1")) {
+      setJunior(true);
+    }
   };
   return (
     <>
       <div className=" w-full">
         <Navbar status={"home"} />
-        <p className="text-3xl text-blue-400 italic ml-[5vw] mt-4">
-          Listening Comprehension
-        </p>
-        <div className="flex flex-col sm:flex-row gap-[3rem] justify-center  mt-[15vh]">
+        <div className="flex flex-col gap-2 mt-4 ml-[5vw]">
+          <img
+            src={junior ? Junior : Primary}
+            alt="logo"
+            className="sm:w-[15rem] w-[10rem] h-auto object-cover"
+          />
+          <p className="sm:text-3xl text-xl text-blue-400 italic ">
+            Listening Comprehension
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-[3rem] justify-center items-center mt-[15vh]">
           {data.map((item) => (
             <div
               className="flex justify-center items-center text-center rounded-md  mx-[4.5rem] sm:mx-0 !w-[50%] !h-[200px] sm:!w-[30%]  sm:!h-[300px] border-2 border-black cursor-pointer text-xl sm:text-3xl font-bold shadow-md shadow-black bg-gradient-to-b from-sky-400 to-sky-200"
