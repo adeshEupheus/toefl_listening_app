@@ -77,7 +77,7 @@ const LoginPage = ({ setIndex }) => {
   return (
     <div>
       <form
-        className="flex  flex-col   p-5 w-[110%] rounded-lg  "
+        className="flex  flex-col   p-5  rounded-lg  "
         style={{ "box-shadow": "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px" }}
       >
         <div className="formGroup flex-col flex">

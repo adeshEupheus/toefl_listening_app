@@ -151,7 +151,7 @@ const Register = () => {
   return (
     <div>
       <form
-        className="flex  flex-col    px-5  rounded-lg w-[150%] sm:w-[110%]"
+        className="flex  flex-col    px-5  rounded-lg  w-full"
         style={{ "box-shadow": "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px" }}
       >
         <Loader2 loading={loading} />

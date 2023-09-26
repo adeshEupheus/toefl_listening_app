@@ -65,7 +65,7 @@ const Home = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-[3rem] justify-center mt-[15vh]">
           <div
-            className={`flex justify-center items-center rounded-md mx-[4.5rem] sm:mx-0 !w-[50%] !h-[200px] sm:!w-[30%] sm:!h-[300px] border-2 border-black  text-3xl font-bold shadow-md shadow-black bg-gradient-to-b from-sky-400 to-sky-200 ${
+            className={`flex justify-center items-center rounded-md mx-[4.5rem] sm:mx-0 !w-[50%] !h-[200px] sm:!w-[30%] sm:!h-[300px] border-2 border-black text-xl  sm:text-3xl text-center font-bold shadow-md shadow-black bg-gradient-to-b from-sky-400 to-sky-200 ${
               disable ? "cursor-default" : "cursor-pointer"
             }`}
             onClick={disable ? "" : handlePractice}
@@ -75,7 +75,7 @@ const Home = () => {
             Practice Test
           </div>
           <div
-            className="flex justify-center items-center rounded-md mx-[4.5rem] sm:mx-0 !w-[50%] !h-[200px] sm:!w-[30%] sm:!h-[300px] border-2 border-black  text-3xl font-bold shadow-md shadow-black bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600"
+            className="flex justify-center items-center text-center rounded-md mx-[4.5rem] sm:mx-0 !w-[50%] !h-[200px] sm:!w-[30%] sm:!h-[300px] border-2 border-black  text-xl sm:text-3xl font-bold shadow-md shadow-black bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600"
             // onClick={handleJunior}
             // onClick={handlePractice}
             TestName="Live"
